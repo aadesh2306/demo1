@@ -1,6 +1,42 @@
-echo "# demo" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/aadesh2306/demo.git
-git push -u origin master
+package nextpackage;
+
+import java.util.ArrayList;
+import java.util.TreeSet;
+
+public class SortDuplicateString {
+public static void main(String[] args) {
+	
+	String[] stri = {"the", "the", "mega", "was", "a","a"};
+
+	TreeSet<String> ts= new TreeSet<String>();	
+	for (int i = 0; i < stri.length; i++) {
+		ts.add(stri[i]);			
+	}
+	
+	Object[] s1 = ts.toArray();
+	String tempS;
+	for (int i = 0; i < s1.length; i++) {
+		//System.out.println(s1[i]);
+		String s2 = (String) s1[i];
+		//System.out.println("Loop 1->"+s2+" Length->"+s2.length());
+		
+		for (int j = i+1; j < s1.length; j++) {
+			String s3=(String) s1[j];
+			//System.out.println(s3+"->"+s3.length());
+			if (s2.length()>s3.length()) {
+				tempS=s2;
+				s2=s3;
+				s3=tempS;
+			}
+			
+		}
+		ArrayList al = new ArrayList();
+		ts.add(s2);
+		System.out.println(s2);
+		
+	}
+	
+	
+	
+}
+}
